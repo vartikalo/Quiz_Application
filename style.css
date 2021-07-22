@@ -1,0 +1,88 @@
+/* ::before and ::after are selectors
+Used to insert something before and after the elements/content */
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* :root selector matches the document's root element. */
+
+/*hue is degree of colro eheel from 0 to 360 */
+/*120-green, 240-blue*/
+/*0% means shade of gray, 100% is full color. */
+:root{
+    --hue-neutral:200;
+    --hue-wrong:0;
+--hue-correct:145;
+}
+
+/* HSL is hue, saturation, lghtness */
+body{
+    --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    background-color: hsl(var(--hue), 100%, 20%);
+}
+
+body.correct{
+    --hue: var(--hue-correct);
+}
+body.wrong{
+    --hue: var(--hue-wrong);
+}
+
+.container{
+    width:800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.btn-grid{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    gap: 15px;
+    margin: 20px 0;  /*20->top&bottom 0 ->Left&right*/
+
+}
+
+.btn{
+    --hue: var(--hue-neutral);
+    background-color: hsl(var(--hue), 100%, 50%);
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: black;
+    outline: none;
+}
+
+.btn.correct{
+--hue:var(--hue-correct);
+}
+
+.btn.wrong{
+--hue:var(--hue-wrong);
+}
+
+.start-btn{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide{
+    display: none;
+}
